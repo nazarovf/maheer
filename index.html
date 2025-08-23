@@ -1,364 +1,24 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Demo Rocket Astronot</title>
 
-  <!-- Remix Icon -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-
-  <style>
-    /* ========== Base Styles ========== */
-    :root {
-      --primary-color: #068c91;
-      --text-color: whitesmoke;
-      --light-text-color: #a6f0ea;
-      --dark-bg-rgba: #026b6f9b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      line-height: 1.6;
-      background: url("bg.png") no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text-color);
-      overflow-x: hidden;
-      user-select: none;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      padding: 0 1rem;
-    }
-
-    /* ========== Navbar ========== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .logo img {
-      height: 36px;
-      margin-right: 8px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 1rem;
-      width: 200px;
-      padding: 1rem;
-      border-radius: 10px;
-      align-items: flex-end;
-      text-align: right;
-      background: var(--dark-bg-rgba);
-    }
-
-    nav ul.active {
-      display: flex;
-    }
-
-    nav ul li {
-      margin: 0.25rem 0;
-    }
-
-    nav ul li a {
-      color: var(--light-text-color);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 2px;
-      left: 0;
-      bottom: -4px;
-      background-color: var(--primary-color);
-      transition: width 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: var(--primary-color);
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-
-    .hamburger {
-      display: block;
-      cursor: pointer;
-    }
-
-    .hamburger img {
-      width: 50px;
-      height: 50px;
-    }
-
-    /* ========== Beranda Section ========== */
-    #beranda {
-      display: flex;
-      align-items: center;
-      min-height: 100vh;
-      padding-bottom: 2rem;
-      background: transparent;
-    }
-
-    .beranda-content {
-      display: flex;
-      flex-direction: column-reverse;
-      text-align: center;
-      gap: 2rem;
-    }
-
-    .beranda-text h3 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-
-    .beranda-text h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .beranda-text h1 span,
-    .beranda-text h2 span {
-      color: var(--primary-color);
-    }
-
-    .beranda-text h2 {
-      font-size: 1rem;
-      font-weight: 800;
-      margin-bottom: 1.2rem;
-      line-height: 1.4;
-      color: var(--primary-color);
-    }
-
-    .beranda-text h2 .sdit-text {
-      font-size: 1.625rem;
-      font-weight: bold;
-      color: var(--text-color);
-    }
-
-    .beranda-text h2 .kelas-text {
-      color: var(--text-color);
-    }
-
-    .beranda-text p {
-      font-size: 0.9rem;
-      color: var(--text-color);
-      line-height: 1.6;
-      margin: 0 auto;
-    }
-
-    .beranda-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-
-    .beranda-image::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 215px;
-      height: 215px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .beranda-image img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 6px solid var(--primary-color);
-      object-fit: cover;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ========== Rocket Astronot ========== */
-    #astro-container {
-      position: fixed;
-      bottom: 20px;
-      right: 4px;
-      width: 80px;
-      height: auto;
-      z-index: 2000;
-    }
-
-    .rocket-wrapper {
-      position: relative;
-      width: 60px;
-      margin: auto;
-    }
-
-    #astro-rocket {
-      width: 60px;
-      cursor: pointer;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      position: relative;
-      z-index: 2;
-      display: block;
-    }
-
-    #astro-rocket.blast {
-      animation: flyUp 2s forwards;
-    }
-
-    @keyframes flyUp {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: translateY(-200px) scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-120vh) scale(0.8);
-        opacity: 0;
-      }
-    }
-
-    .smoke {
-      position: absolute;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      animation: smokeRise 1.5s forwards;
-      z-index: 1;
-    }
-
-    @keyframes smokeRise {
-      0% {
-        opacity: 0.8;
-        transform: translateX(-50%) translateY(0) scale(1);
-      }
-      50% {
-        opacity: 0.4;
-        transform: translateX(-50%) translateY(20px) scale(1.5);
-      }
-      100% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(60px) scale(2);
-      }
-    }
-
-    /* ========== Desktop Styles ========== */
-    @media (min-width: 769px) {
-      nav ul {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        padding: 0;
-        background: none;
-        align-items: center;
-        text-align: left;
-        gap: 2.5rem;
-      }
-
-      .hamburger {
-        display: none;
-      }
-
-      .beranda-content {
-        flex-direction: row;
-        text-align: left;
-        gap: 4rem;
-      }
-
-      .beranda-text h3 {
-        font-size: 1.1rem;
-        color: var(--light-text-color);
-      }
-
-      .beranda-text h1 {
-        font-size: 3rem;
-      }
-
-      .beranda-text h2 {
-        font-size: 1.8rem;
-        font-weight: 500;
-        color: var(--text-color);
-      }
-
-      .beranda-text p {
-        font-size: 1.05rem;
-        max-width: 480px;
-        margin: 0;
-      }
-
-      .beranda-image::before {
-        width: 315px;
-        height: 315px;
-      }
-
-      .beranda-image img {
-        width: 300px;
-        height: 300px;
-      }
-
-      #astro-container {
-        right: 200px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- ========== Header/Navbar ========== -->
   <header>
     <nav>
       <div class="logo">
-        <img src="logo.png" alt="Logo Maheer"/>
+        <img src="logo.png" alt="Logo Maheer" />
       </div>
       <ul id="menu">
         <li><a href="#beranda">Beranda</a></li>
@@ -367,97 +27,167 @@
         <li><a href="#contact">Tentang Saya</a></li>
       </ul>
       <div class="hamburger" id="hamburger" tabindex="-1">
-        <img src="planet.png" alt="Menu"/>
+        <img src="planet.png" alt="Menu" />
       </div>
     </nav>
   </header>
 
-  <!-- ========== Main Content ========== -->
   <main>
     <section id="beranda">
       <div class="container">
         <div class="beranda-content">
           <div class="beranda-text" tabindex="-1">
             <h3>Assalaamu'alaikum.. Saya</h3>
-            <h1>Muhammad <span>Maheer</span> Al’Asyi</h1>
+            <h1 style="font-size: 22px">Muhammad <span>Maheer</span> Al’Asyi</h1>
             <h2>
-              <span class="kelas-text">Siswa Kelas IV</span><br>
+              <span class="kelas-text">Siswa Kelas IV</span><br />
               <span class="sdit-text">SD IT <span class="primary-color-text">Luqmanul Hakim</span></span>
             </h2>
             <p>Website ini dibuat untuk mempermudah saya belajar dan memahami pelajaran Matematika</p>
           </div>
           <div class="beranda-image" tabindex="-1">
-            <img src="fotoku.jpeg" alt="Foto Maheer"/>
+            <img src="fotoku.jpeg" alt="Foto Maheer" />
           </div>
         </div>
       </div>
     </section>
+
+    <section id="faktor">
+      <div class="container">
+        <h1>📘 Faktor Bilangan</h1>
+        <p><b>Apa itu Faktor Bilangan?</b></p>
+        <p>Faktor bilangan adalah angka yang dapat membagi suatu bilangan tanpa sisa.</p>
+        <p>Contoh: Faktor dari bilangan 6 adalah <b>1, 2, 3, 6</b> karena semua angka ini bisa membagi 6.</p>
+        <p>Adapun Pasangan Faktor adalah dua angka yang jika dikalikan hasilnya sama dengan bilangan tersebut.</p>
+        <p>Contoh: 6 = 1 × 6, 2 × 3</p>
+
+        <section class="wrap">
+          <h2>Masukkan Bilangan</h2>
+          <div class="panel">
+            <form id="faktor-form">
+              <div class="row">
+                <label for="angka">Angka</label>
+                <input type="number" id="angka" placeholder="Masukkan angka" min="1" required />
+              </div>
+              <div class="btns">
+                <button type="submit" class="btn-primary">Cari Faktor</button>
+                <button type="reset" class="btn-ghost" id="reset-faktor">Reset</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="wrap" id="hasil-faktor-section" style="display: none">
+          <h2>Hasil Perhitungan</h2>
+          <div class="panel" id="hasil-faktor"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="kelipatan">
+      <div class="container">
+        <h1>📘 Kelipatan Bilangan</h1>
+        <p><b>Apa itu Kelipatan Bilangan?</b></p>
+        <p>Kelipatan bilangan adalah angka-angka yang kita dapatkan jika kita mengalikan sebuah bilangan dengan 1, 2, 3,
+          4, dan seterusnya.</p>
+        <p>
+          Contoh: Kelipatan dari 3 adalah <b>3, 6, 9, 12, …</b>. Kelipatan dari 5 adalah <b>5, 10, 15, 20, …</b>.
+        </p>
+        <p style="font-weight: 700">Cara Mencari Kelipatan:</p>
+        <p>👉 Dengan Perkalian: Kalikan bilangan itu dengan 1, 2, 3,... Contoh: 4×1=4, 4×2=8, 4×3=12 ...</p>
+        <p>👉 Dengan Penjumlahan Berulang: Tambahkan bilangan itu berulang kali. Contoh: 4, 4+4=8, 8+4=12 ...</p>
+
+        <section class="wrap">
+          <h2>Masukkan Bilangan</h2>
+          <div class="panel">
+            <div class="input-row">
+              <div class="input-item">
+                <label for="k1">Bilangan #1</label>
+                <input id="k1" type="number" min="1" max="100" placeholder="Misal: 3" />
+              </div>
+              <div class="input-item">
+                <label for="k2">Bilangan #2</label>
+                <input id="k2" type="number" min="1" max="100" placeholder="Misal: 4" />
+              </div>
+              <div class="input-item">
+                <label for="k3">Bilangan #3</label>
+                <input id="k3" type="number" min="1" max="100" placeholder="Misal: 5" />
+              </div>
+            </div>
+            <div class="btns">
+              <button class="btn-primary" id="tandai">Arsir</button>
+              <button class="btn-ghost" id="reset">Hapus Arsiran</button>
+            </div>
+            <div class="helper">
+              <b>Petunjuk:</b><br />
+              1) Ketik bilangan yang ingin dicari kelipatannya.<br />
+              2) Tekan <b>Arsir</b> untuk memberi warna.<br />
+              3) Tekan <b>Hapus Arsiran</b> untuk reset.
+            </div>
+          </div>
+        </section>
+
+        <section class="wrap">
+          <h2>Keterangan Warna</h2>
+          <div class="panel">
+            <div class="chip-row">
+              <span class="chip"><span class="dot c1"></span> Bilangan #1</span>
+              <span class="chip"><span class="dot c2"></span> Bilangan #2</span>
+              <span class="chip"><span class="dot c3"></span> Bilangan #3</span>
+              <span class="chip"><span class="dot overlap"></span> Bilangan Sama</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="wrap">
+          <h2>Grid Angka 1–100</h2>
+          <div class="grid" id="grid"></div>
+        </section>
+
+        <section class="wrap">
+          <h2>Hasil Arsiran</h2>
+          <div class="panel">
+            <div class="row">
+              <label id="lblH1">Hasil Kelipatan - :</label> <span id="hasil1">-</span>
+            </div>
+            <div class="row">
+              <label id="lblH2">Hasil Kelipatan - :</label> <span id="hasil2">-</span>
+            </div>
+            <div class="row">
+              <label id="lblH3">Hasil Kelipatan - :</label> <span id="hasil3">-</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="wrap">
+          <h2>Bilangan yang Sama</h2>
+          <div class="panel">
+            <div class="row">
+              <label id="lbl12">Kelipatan - & - :</label> <span id="same12">-</span>
+            </div>
+            <div class="row">
+              <label id="lbl13">Kelipatan - & - :</label> <span id="same13">-</span>
+            </div>
+            <div class="row">
+              <label id="lbl23">Kelipatan - & - :</label> <span id="same23">-</span>
+            </div>
+            <div class="row">
+              <label id="lbl123">Kelipatan - , - & - :</label>
+              <span id="same123">-</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
   </main>
 
-  <!-- ========== Rocket Astronot ========== -->
   <div id="astro-container">
     <div class="rocket-wrapper">
-      <img src="astronot.png" id="astro-rocket" alt="astronot"/>
+      <img src="astronot.png" id="astro-rocket" alt="astronot" />
     </div>
   </div>
 
-  <script>
-    // Toggle Menu
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("menu");
-
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
-
-    // Auto close menu when a link is clicked
-    document.querySelectorAll("#menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("active");
-      });
-    });
-
-    // Rocket Animation
-    const astroRocket = document.getElementById("astro-rocket");
-    const rocketWrapper = document.querySelector(".rocket-wrapper");
-    let isFlying = false;
-
-    astroRocket.addEventListener("click", () => {
-      if (isFlying) return;
-      isFlying = true;
-
-      // Blur effect before transform
-      astroRocket.style.filter = "blur(5px)";
-      setTimeout(() => {
-        astroRocket.src = "rocket.png";
-        astroRocket.style.filter = "blur(0)";
-        astroRocket.classList.add("blast");
-
-        // Smoke effect
-        for (let i = 0; i < 8; i++) {
-          setTimeout(() => {
-            const smoke = document.createElement("div");
-            smoke.className = "smoke";
-            rocketWrapper.appendChild(smoke);
-            setTimeout(() => smoke.remove(), 1500);
-          }, i * 150);
-        }
-      }, 300);
-
-      // Smooth scroll to top
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 800);
-
-      // Reset after flight
-      setTimeout(() => {
-        astroRocket.classList.remove("blast");
-        astroRocket.style.transform = "translateY(0)";
-        astroRocket.style.opacity = "1";
-        astroRocket.src = "astronot.png";
-        isFlying = false;
-      }, 2500);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
