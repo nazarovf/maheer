@@ -1,13 +1,13 @@
 /* ========== Base Styles (Mobile First) ========== */
 :root {
-    --primary-color: #068c91;
+     --primary-color: #04b0b6;
     --secondary-color: #007bff;
     --light-bg-color: #fff;
     --light-text-color: #a6f0ea;
     --dark-text-color: #333;
     --text-color: whitesmoke;
     --dark-bg-rgba: #026b6f9b;
-    --section-bg-light: rgba(245, 236, 245, 0.556);
+    --section-bg-light: rgba(241, 168, 241, 0.556);
     --section-bg-green: rgba(130, 220, 201, 0.677);
     --border-color: #ccc;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@ body {
 
 h1,
 h2 {
-    color: var(--dark-text-color);
+    color: w;
 }
 
 /* Gaya input disatukan */
@@ -52,46 +52,18 @@ input[type="number"] {
 }
 
 /* Refactoring Gaya Tombol */
-.btn {
-    cursor: pointer;
-    display: inline-block;
-    padding: 12px 24px;
+button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
 }
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.btn-primary {
-    background: var(--secondary-color);
-    color: var(--text-color);
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
-.btn-ghost {
-    background: var(--light-bg-color);
-    color: var(--dark-text-color);
-    border: 1px solid var(--border-color);
-}
-
-.btn-ghost:hover {
-    background-color: #f0f0f0;
+button:hover {
+    background-color: var(--dark-text-color);
 }
 
 .wrap {
@@ -325,11 +297,6 @@ nav ul li a:hover::after {
     /* Input angka akan mengisi ruang yang tersedia */
 }
 
-.btns {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-}
 
 /* Perbaikan untuk Keterangan Warna */
 .chip-row {
@@ -398,7 +365,6 @@ nav ul li a:hover::after {
 #hasil-faktor h3 {
     font-weight: bold;
     font-size: 16px;
-    margin-bottom: 10px;
     color: var(--dark-text-color);
     border-bottom: 2px solid #eee;
     padding-bottom: 5px;
@@ -407,6 +373,24 @@ nav ul li a:hover::after {
 #hasil-faktor p {
     margin-bottom: 5px;
 }
+
+
+/* ========== Pecahan Senilai Section ========== */
+#pecahan-senilai {
+    background: rgba(207, 238, 32, 0.527);
+    padding: 20px;
+}
+
+form { margin-bottom: 20px; }
+  input[type="text"] {
+    width: 70%; max-width: 150px; padding: 10px; font-size: 1rem;
+  }
+
+div { margin-top: 10px; word-wrap: break-word; }
+  #multiplyResult, #divideResult { font-weight: bold; }
+  canvas { width: 100%; max-width: 250px; height: auto; margin-top: 10px; display: block; }
+  .pizza-container { margin-bottom: 20px; }
+  hr { margin: 30px 0; border: 0; border-top: 1px solid #ccc; }
 
 /* ========== Rocket Astronot ========== */
 #astro-container {
@@ -562,4 +546,8 @@ nav ul li a:hover::after {
     .grid {
         grid-template-columns: repeat(10, 1fr);
     }
+
+          #astro-container {
+        right: 200px;
+      }
 }
