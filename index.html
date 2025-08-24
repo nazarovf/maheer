@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demo Rocket Astronot</title>
-
+  <title>Muhammad Maheer Al'Asyi</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/73/Flat_tick_icon.svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,9 +22,9 @@
       </div>
       <ul id="menu">
         <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#kelipatan">Kelipatan Bilangan</a></li>
         <li><a href="#faktor">Faktor Bilangan</a></li>
-        <li><a href="#contact">Tentang Saya</a></li>
+        <li><a href="#kelipatan">Kelipatan Bilangan</a></li>
+        <li><a href="#pecahan-senilai">Pecahan Senilai</a></li>
       </ul>
       <div class="hamburger" id="hamburger" tabindex="-1">
         <img src="planet.png" alt="Menu" />
@@ -38,9 +38,9 @@
         <div class="beranda-content">
           <div class="beranda-text" tabindex="-1">
             <h3>Assalaamu'alaikum.. Saya</h3>
-            <h1 style="font-size: 22px">Muhammad <span>Maheer</span> Al’Asyi</h1>
+            <h1>Muhammad <span>Maheer</span> Al’Asyi</h1>
             <h2>
-              <span class="kelas-text">Siswa Kelas IV</span><br />
+              <span class="kelas-text">Siswa Kelas IV</span><br>
               <span class="sdit-text">SD IT <span class="primary-color-text">Luqmanul Hakim</span></span>
             </h2>
             <p>Website ini dibuat untuk mempermudah saya belajar dan memahami pelajaran Matematika</p>
@@ -55,11 +55,15 @@
     <section id="faktor">
       <div class="container">
         <h1>📘 Faktor Bilangan</h1>
-        <p><b>Apa itu Faktor Bilangan?</b></p>
-        <p>Faktor bilangan adalah angka yang dapat membagi suatu bilangan tanpa sisa.</p>
-        <p>Contoh: Faktor dari bilangan 6 adalah <b>1, 2, 3, 6</b> karena semua angka ini bisa membagi 6.</p>
-        <p>Adapun Pasangan Faktor adalah dua angka yang jika dikalikan hasilnya sama dengan bilangan tersebut.</p>
-        <p>Contoh: 6 = 1 × 6, 2 × 3</p>
+        <div class="panel">
+          <p><b>Apa itu Faktor Bilangan?</b></p>
+          <p>Faktor bilangan adalah angka yang dapat membagi suatu bilangan tanpa sisa.</p>
+          <p>Contoh: Faktor dari bilangan 6 adalah <b>1, 2, 3, 6</b> karena semua angka ini bisa membagi 6.</p>
+          <p>Adapun Pasangan Faktor adalah dua angka yang jika dikalikan hasilnya sama dengan bilangan tersebut.</p>
+          <p>Contoh: 6 = 1 × 6, 2 × 3</p>
+        </div>
+
+
 
         <section class="wrap">
           <h2>Masukkan Bilangan</h2>
@@ -70,8 +74,8 @@
                 <input type="number" id="angka" placeholder="Masukkan angka" min="1" required />
               </div>
               <div class="btns">
-                <button type="submit" class="btn-primary">Cari Faktor</button>
-                <button type="reset" class="btn-ghost" id="reset-faktor">Reset</button>
+                <button type="submit">Cari Faktor</button>
+                <button type="reset" id="reset-faktor">Reset</button>
               </div>
             </form>
           </div>
@@ -87,15 +91,24 @@
     <section id="kelipatan">
       <div class="container">
         <h1>📘 Kelipatan Bilangan</h1>
-        <p><b>Apa itu Kelipatan Bilangan?</b></p>
-        <p>Kelipatan bilangan adalah angka-angka yang kita dapatkan jika kita mengalikan sebuah bilangan dengan 1, 2, 3,
-          4, dan seterusnya.</p>
-        <p>
-          Contoh: Kelipatan dari 3 adalah <b>3, 6, 9, 12, …</b>. Kelipatan dari 5 adalah <b>5, 10, 15, 20, …</b>.
-        </p>
-        <p style="font-weight: 700">Cara Mencari Kelipatan:</p>
-        <p>👉 Dengan Perkalian: Kalikan bilangan itu dengan 1, 2, 3,... Contoh: 4×1=4, 4×2=8, 4×3=12 ...</p>
-        <p>👉 Dengan Penjumlahan Berulang: Tambahkan bilangan itu berulang kali. Contoh: 4, 4+4=8, 8+4=12 ...</p>
+        <div class="panel">
+          <p><b>Apa itu Kelipatan Bilangan?</b></p>
+          <p>Kelipatan bilangan adalah angka-angka yang kita dapatkan jika kita mengalikan sebuah bilangan dengan 1, 2,
+            3,
+            4, dan seterusnya.</p>
+          <p>
+            Contoh: Kelipatan dari bilangan 3 adalah <b>3, 6, 9, 12, …</b>.
+          </p>
+          <p>
+            Contoh: Kelipatan dari bilangan 5 adalah <b>5, 10, 15, 20, …</b>.
+          </p>
+          <p style="font-weight: 700">Cara Mencari Kelipatan:</p>
+          <p>👉 <span style="font-weight: 700;">Dengan Perkalian:</span> Kalikan bilangan itu dengan 1, 2, 3,... Contoh:
+            4×1=4, 4×2=8, 4×3=12 ...</p>
+          <p>👉 <span style="font-weight: 700;">Dengan Penjumlahan Berulang:</span> Tambahkan bilangan itu berulang
+            kali. Contoh: 4, 4+4=8, 8+4=12 ...</p>
+        </div>
+
 
         <section class="wrap">
           <h2>Masukkan Bilangan</h2>
@@ -115,8 +128,8 @@
               </div>
             </div>
             <div class="btns">
-              <button class="btn-primary" id="tandai">Arsir</button>
-              <button class="btn-ghost" id="reset">Hapus Arsiran</button>
+              <button id="tandai">Arsir</button>
+              <button id="reset">Hapus Arsiran</button>
             </div>
             <div class="helper">
               <b>Petunjuk:</b><br />
@@ -178,6 +191,61 @@
           </div>
         </section>
       </div>
+    </section>
+
+    <section id="pecahan-senilai">
+      <div class="container">
+        <h1>📘 Pecahan Senilai</h1>
+        <div class="panel">
+          <p><b>Apa itu Pecahan Senilai?</b></p>
+          <p>Pecahan Senilai adalah pecahan yang memiliki nilai yang sama walaupun tulisannya berbeda.</p>
+          <p>Contoh: <span class="kbd">1/2</span>, <span class="kbd">2/4</span>,
+            <span class="kbd">3/6</span>, <span class="kbd">4/8</span>.
+          </p>
+          </p>
+          <p>Cara membuat pecahan senilai:</b> kalikan atau bagi <i>pembilang</i> dan <i>penyebut</i>
+            dengan bilangan yang sama. </p>
+          <p>Contoh dengan perkalian: <span class="kbd">1/2 = 3/6</span> karena 1×3 / 2×3 = 3/6.</p>
+          <p>Contoh dengan pembagian: <span class="kbd">3/6 = 1/2</span> karena 3÷3 / 6÷3 = 1/2.</p>
+        </div>
+
+
+
+        <section class="wrap">
+          <h2>Pecahan Senilai (Perkalian)</h2>
+          <div class="panel">
+            <form id="formMultiply">
+              Masukkan pecahan (contoh: 3/8):
+              <input type="text" id="fractionMultiply" placeholder="a/b" required>
+              <button type="submit">Hitung</button>
+              <button type="button" id="resetMultiply">Reset</button>
+            </form>
+            <div id="multiplyResult"></div>
+            <div id="multiplyCharts" class="pizza-container"></div>
+          </div>
+
+
+          <hr>
+
+          <h2>Pecahan Disederhanakan (Pembagian)</h2>
+          <div class="panel">
+            <form id="formDivide">
+              Masukkan pecahan (contoh: 3/6):
+              <input type="text" id="fractionDivide" placeholder="a/b" required>
+              <button type="submit">Sederhanakan</button>
+              <button type="button" id="resetDivide">Reset</button>
+            </form>
+            <div id="divideResult"></div>
+            <canvas id="divideChart" width="200" height="200"></canvas>
+          </div>
+
+        </section>
+
+      </div>
+    </section>
+
+    </div>
+
     </section>
   </main>
 
